@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スイカ割り</title>
+</head>
+<body>
+    <script>
+        let suikax = Math.floor(Math.random() * 5);
+        let suikay = Math.floor(Math.random() * 5);
+
+        let playerx = Math.floor(Math.random() * 5);
+        let playery = Math.floor(Math.random() * 5);    
+
+        let x;
+        let y;
+        let kyori;
+        while(1){   
+        let direction = window.prompt("東(e),西(w),南(s),北(n)");
+
+
+            if(direction === "e"){
+                playerx = playerx + 1;
+            }
+
+            else if(direction === "w"){
+                playerx = playerx - 1;
+            }
+
+            else if(direction === "s"){
+                playery = playery - 1;
+            }
+
+            else if(direction === "n"){
+                playery = playery + 1; 
+            }
+
+            else{
+                continue;
+            }
+            x = playerx - suikax;
+            y = playery - suikay;
+            kyori = Math.sqrt(x ** 2 + y ** 2);
+            alert("スイカとの距離は" + kyori);
+
+            if(kyori == 0){
+                alert('clear!!');
+                 break;
+            }
+
+
+        } 
+    </script>
+</body>
+</html>
